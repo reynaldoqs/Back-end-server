@@ -17,7 +17,7 @@ app.get("/", (req, res, next) => {
       return res.status(500).json({
         ok: false,
         mensaje: "Error cargando usuarios",
-        erros: err
+        error: err
       });
     }
 
@@ -84,7 +84,7 @@ app.put('/:id', mdAuth.verificaToken,(req, res) => {
 })
 
 // crear un nuevo usuario
-app.post('/',mdAuth.verificaToken ,(req, res) => {
+app.post('/', mdAuth.verificaToken ,(req, res) => {
 
     var body = req.body;
     var usuario = new Usuario({
