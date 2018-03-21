@@ -10,7 +10,6 @@ app.get('/:tipo/:img', (req, res, next) => {
 
     var url = `./uploads/${ tipo }/${ img }`;
 
-    console.log(url);
    fs.access(url, (err) => {
 
         if(err && err.code === 'ENOENT'){
